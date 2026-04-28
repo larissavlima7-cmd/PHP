@@ -25,10 +25,10 @@
 
         //Decisões com base no tempo da empresa
         if($tempoEmpresa<5){
-            echo "A Empresa está iniciando";
+            echo "\nA Empresa está iniciando";
         }
         else{
-            echo "A empresa está consolidada";
+            echo "\nA empresa está consolidada";
         }
     ?>
 
