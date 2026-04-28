@@ -14,21 +14,21 @@
 
         //Decisões com base na quantidade de funcionários
         if($funcionarios<=20){
-            echo "A empresa é de pequeno porte";
+            echo "A empresa é de pequeno porte.";
         }
         elseif($funcionarios<60){
-            echo "A empresa é de médio porte";
+            echo "A empresa é de médio porte.";
         }
         else{
-            echo "A empresa é de grande porte";
+            echo "A empresa é de grande porte.";
         }
 
         //Decisões com base no tempo da empresa
         if($tempoEmpresa<5){
-            echo "\nA Empresa está iniciando";
+            echo " A Empresa está iniciando.";
         }
         else{
-            echo "\nA empresa está consolidada";
+            echo " A empresa está consolidada.";
         }
     ?>
 
