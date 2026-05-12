@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliação dos Produtos</title>
     <style>
-        /* CONFIGURAÇÃO GERAL */
-        body {
+       body{
             background-color: #b466a1;
             font-family: 'Segoe UI', sans-serif;
             display: flex;
@@ -16,10 +15,7 @@
             padding: 20px;
         }
 
-        h1 { text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
-
-        /* FORMULÁRIO */
-        form {
+        form{
             background-color: rgba(255, 255, 255, 0.2);
             padding: 30px;
             border-radius: 20px;
@@ -28,93 +24,40 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        label { font-weight: bold; display: block; margin-top: 10px; }
-
         input[type="text"], input[type="email"] {
             width: 100%;
-            padding: 12px;
-            border: none;
+            padding: 10px;
             border-radius: 8px;
-            margin-top: 5px;
+            border: none;
+            margin: 10px 0;
             box-sizing: border-box;
         }
 
-        hr { border: 0; height: 1px; background: rgba(255,255,255,0.3); margin: 20px 0; }
-
-        /* GRUPO DE PRODUTOS (RADIOS) */
-        .radio-group { margin: 10px 0; }
-        .radio-group label { display: inline-block; margin-right: 15px; font-weight: normal; cursor: pointer; }
-
-        /* SISTEMA DE ESTRELAS */
-        .rating-container {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
-            gap: 5px;
-        }
-
-        .rating-container input { display: none; }
-
-        .rating-container label {
-            font-size: 2.5rem;
-            color: #fce4ec; /* Estrela vazia */
-            cursor: pointer;
-            transition: color 0.2s, transform 0.2s;
-            margin: 0;
-        }
-
-        .rating-container label::before { content: '\2605'; }
-
-        /* Efeito de preenchimento e hover */
-        .rating-container input:checked ~ label,
-        .rating-container label:hover,
-        .rating-container label:hover ~ label {
-            color: #ffca08;
-            transform: scale(1.1);
-        }
-
-        /* O BOTÃO (ESTILIZADO) */
-        #btn {
+        .btn{
             display: block;
             width: 100%;
             padding: 15px;
-            margin-top: 25px;
-            background-color: #7d3c6d; /* Roxo elegante */
+            background-color: #7d3c6d;
             color: white;
             border: none;
             border-radius: 10px;
-            font-size: 1.1rem;
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
         }
 
-        #btn:hover {
-            background-color: #5a2b4e;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        /* CAIXA DE RESPOSTA */
-        #resp {
-            margin-top: 30px;
+        
+        #resp{
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 15px;
             background-color: #e7a7cf;
             color: #4b2341;
-            padding: 25px;
-            border-radius: 15px;
             width: 100%;
             max-width: 500px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            animation: slideUp 0.4s ease-out;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
 
     </style>
 </head>
@@ -156,13 +99,11 @@
         <input type="text" placeholder="Digite sua opinião sobre o arquivo aqui" id="msg" name="msg">
         <br><hr><br>
 
-        <div id="btn">
-            <!-- Botão de enviar -->
-            <input type="submit" id="btn" value="Enviar">
-            <br><hr>
-        </div>
-        
+        <!-- Botão de enviar -->
+        <button type="submit" class="btn">Enviar Avaliação</button>
+        <br><hr>       
     </form>
+
     <div id="resp">
     <?php
     if(isset($_POST["name"],$_POST["email"],$_POST["produto"],$_POST["star"],$_POST["msg"])){
